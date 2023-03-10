@@ -1,41 +1,35 @@
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import React from "react";
+import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import { Button } from './Button';
+import { Button } from "../components/Button";
 
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Example/Button',
-  component: Button,
-  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-  argTypes: {
-    backgroundColor: { control: 'color' },
-  },
+	title: "Example/Button",
+	component: Button,
+	argTypes: {
+		backgroundColor: { control: "color" },
+	},
 } as ComponentMeta<typeof Button>;
 
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
+// Template.bind({}) is a standard JavaScript technique for making a copy of a function. We copy the Template so each exported story can set its own properties on it.
 
 export const Primary = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
 Primary.args = {
-  primary: true,
-  label: 'Button',
+	text: "Primary Button",
+	weight: 600,
+	secondary: false,
+	vertical: 7,
+	horizontal: 7,
+	width: "auto",
+	padding: 14,
+	backgroundColor: "#FA81B1",
 };
+
+Primary.storyName = "Primary button";
 
 export const Secondary = Template.bind({});
-Secondary.args = {
-  label: 'Button',
-};
+Secondary.args = { ...Primary.args, text: "Secondary Button", secondary: true, backgroundColor: "#F7E3EB" };
 
-export const Large = Template.bind({});
-Large.args = {
-  size: 'large',
-  label: 'Button',
-};
+Secondary.storyName = "Secondary";
 
-export const Small = Template.bind({});
-Small.args = {
-  size: 'small',
-  label: 'Button',
-};

@@ -8,8 +8,10 @@
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.5.2",
     "@types/node": "^16.18.14",
+    "@types/normalize-package-data": "^2.4.1",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
+    "normalize-package-data": "^5.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
@@ -63,8 +65,10 @@
     "@storybook/preset-create-react-app": "^4.1.2",
     "@storybook/react": "^6.5.16",
     "@storybook/testing-library": "^0.0.13",
+    "@types/styled-components": "^5.1.26",
     "babel-plugin-named-exports-order": "^0.0.2",
     "prop-types": "^15.8.1",
+    "styled-components": "^5.3.8",
     "webpack": "^5.76.0"
   }
 }
